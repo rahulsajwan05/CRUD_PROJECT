@@ -1,0 +1,48 @@
+<div class="container mt-3">
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <h1 class="text-center mb-3"> Registered User </h1>
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Address</th>
+            <th scope="col"> Action </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let u of userList">
+            <th scope="row">{{u.userId}}</th>
+            <td>{{u.userName}}</td>
+            <td>{{u.userEmail}}</td>
+            <td>{{u.userPhone}}</td>
+            <td>{{u.userDOB}}</td>
+            <td>{{u.userAddress}}</td>
+
+            <td>
+              <input type="button" value="delete" (click)="deleteUser(u.userId)">
+              <input type="button" value="update" (click)="updateUser(u.userId)">
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="container text-center">
+        <small [routerLink]="['./registration']" class="btn btn-outline-success">Add User</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
